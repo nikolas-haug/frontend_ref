@@ -1,0 +1,80 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    height: 100vh;
+}
+
+.list {
+    background-color: #f7f7f7;
+    padding: 1rem;
+    width: 50rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .5);
+    transition: all .3s;
+}
+
+.list:hover {
+    transform: translateY(-.5rem);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .4);
+}
+
+.list ul {
+    list-style: none;
+}
+
+.list ul li {
+    padding: 1rem;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+input[type="checkbox"] + label::before {
+    content: '⬜️';
+    margin-right: 1rem;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: '🐡';
+    margin-right: 1rem;
+}
+
+button {
+    width: 100%;
+    border: none;
+    background-color: aquamarine;
+    color: #777;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+button:hover {
+    background-color: peru;
+    color: #f7f7f7;
+}

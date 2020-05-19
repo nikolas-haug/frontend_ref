@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Template</title>
+</head>
+<body>
+
+    <label for="text">Enter your text below:</label><br>
+    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+
+    <p>You've written <strong><span id="word-count">0</span> words</strong> and <strong><span id="character-count">0</span> characters</strong>.</p>
+
+    <script>
+    
+        const textField = document.querySelector('#text');
+        const wordCount = document.querySelector('#word-count');
+        const charCount = document.querySelector('#character-count');
+
+        textField.addEventListener('input', (event) => {
+            console.log(event.target.value);
+
+            wordCount.textContent = event.target.value.split(' ').filter(word => word.length > 0).length;
+            charCount.textContent = event.target.value.length;
+        });
+    
+    </script>
+    
+</body>
+</html>

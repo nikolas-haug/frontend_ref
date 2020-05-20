@@ -12,3 +12,5 @@ text.addEventListener('input', function(e) {
 
     charCount.textContent = charLength;
 });
+
+window.open('https://source.unsplash.com/random', 'popUpWindow', 'width=400, height=300, left=200, top=100');

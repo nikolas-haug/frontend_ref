@@ -27,13 +27,14 @@ body {
     padding: 1rem;
     width: 50rem;
     border-radius: .5rem;
-    box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .5);
+    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .4);
+    cursor: pointer;
     transition: all .3s;
 }
 
 .list:hover {
-    transform: translateY(-.5rem);
-    box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .4);
+    transform: translateY(-.2rem);
+    box-shadow: 0 .5rem .8rem rgba(0, 0, 0, .5);    
 }
 
 .list ul {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random BG</title>
+</head>
+<body>
+
+    <h1>Background Color Changer</h1>
+
+    <button class="change-bg">Change BG</button>
+
+    <script>
+
+        const bgBtn = document.querySelector('.change-bg');
+    
+        function randomNum(num) {
+            let random = Math.floor((Math.random() * num) + 1);
+            console.log(random);
+            return random;
+        }
+
+        bgBtn.addEventListener('click', () => {
+            document.body.style.backgroundColor = `rgba(${randomNum(255)}, ${randomNum(255)}, ${randomNum(255)})`;
+        });
+
+    
+    </script>
+    
+</body>
+</html>

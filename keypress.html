@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Keys</title>
+
+    <style>
+    
+        .red {
+            background-color: red;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -14,19 +23,47 @@
     <button>Add +</button>
 
     <ul class="second">
-        
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
     </ul>
+
+    <ul class="todo-list"></ul>
+
+    <input type="text" class="todo-input">
 
     <script>
 
-        const ul = document.querySelector('ul');
-        document.addEventListener('keydown', (e) => {
-            let li = document.createElement('li');
-            let temp = `${e.key}(${e.keyCode})`;
-            let textC = document.createTextNode(temp);
-            li.appendChild(textC);
-            ul.appendChild(li);
-        });
+        const list = document.querySelector('.todo-list');
+        const input = document.querySelector('.todo-input');
+
+        input.addEventListener('keypress', addItem);
+
+        function additem(e) {
+            let listItem = input.value;
+            console.log(listItem);
+        }
+
+        // const list = document.querySelectorAll('li');
+        // for(let i = 0; i < list.length; i++) {
+        //     console.log(list[i]);
+        //     list[i].addEventListener('mouseover', (e) => {
+        //         e.target.classList.add('red');
+        //     });
+        //     list[i].addEventListener('mouseout', (e) => {
+        //         e.target.classList.remove('red');
+        //     });
+        // }
+
+        // const ul = document.querySelector('ul');
+        // document.addEventListener('keydown', (e) => {
+        //     let li = document.createElement('li');
+        //     let temp = `${e.key}(${e.keyCode})`;
+        //     let textC = document.createTextNode(temp);
+        //     li.appendChild(textC);
+        //     ul.appendChild(li);
+        // });
 
         // const element = document.querySelector('.input');
         // element.addEventListener('keyup', additem);

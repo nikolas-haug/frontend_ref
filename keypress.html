@@ -7,19 +7,29 @@
     <title>Keys</title>
 
     <style>
+
+        li {
+            cursor: pointer;
+        }
     
         .red {
-            background-color: red;
+            color: red;
             cursor: pointer;
+            text-decoration: line-through;
+        }
+
+        .red span {
+            text-decoration: none;
+            color: initial;
         }
 
     </style>
 </head>
 <body>
 
-    <h1>Keys</h1>
+    <h1>JS Lists</h1>
     
-    <input type="text" class="input">
+    <!-- <input type="text" class="input">
     <button>Add +</button>
 
     <ul class="second">
@@ -27,7 +37,7 @@
         <li>list item</li>
         <li>list item</li>
         <li>list item</li>
-    </ul>
+    </ul> -->
 
     <ul class="todo-list"></ul>
 
@@ -49,6 +59,19 @@
                 let listElem = document.createElement('li');
                 let listText = document.createTextNode(listItem);
                 listElem.appendChild(listText);
+                listElem.addEventListener('click', function(e) {
+                    let temp = this.classList.toggle('red');
+                    if(temp) {
+                        let span = document.createElement('span');
+                        span.textContent = ' X';
+                        span.addEventListener('click', function() {
+                            this.parentElement.remove();
+                        });
+                        this.appendChild(span);
+                    } else {
+                        this.getElementsByTagName('span')[0].remove();
+                    }
+                });
                 list.appendChild(listElem);
                 input.value = '';
             }

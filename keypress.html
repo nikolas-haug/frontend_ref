@@ -32,17 +32,30 @@
     <ul class="todo-list"></ul>
 
     <input type="text" class="todo-input">
+    <button class="clearBtn">Clear List</button>
 
     <script>
 
         const list = document.querySelector('.todo-list');
         const input = document.querySelector('.todo-input');
+        const clearBtn = document.querySelector('.clearBtn');
 
         input.addEventListener('keypress', addItem);
+        clearBtn.addEventListener('click', clearList);
 
-        function additem(e) {
+        function addItem(e) {
             let listItem = input.value;
-            console.log(listItem);
+            if(e.keyCode === 13 && listItem.length > 0) {
+                let listElem = document.createElement('li');
+                let listText = document.createTextNode(listItem);
+                listElem.appendChild(listText);
+                list.appendChild(listElem);
+                input.value = '';
+            }
+        }
+
+        function clearList(e) {
+            list.innerHTML = '';
         }
 
         // const list = document.querySelectorAll('li');
